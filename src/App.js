@@ -22,11 +22,13 @@ const {  REACT_APP_PUBLIC_URI } = process.env;
 
 function App() {
 
+  const logoUrl = REACT_APP_PUBLIC_URI + logo;
+
   return (
     <Router>
       <div className="App">
         <header>
-          <img src={logo} className="logo" alt="WKND Logo"/>
+          <img src={logoUrl} className="logo" alt="WKND Logo"/>
           <hr />
         </header>
       <Switch>

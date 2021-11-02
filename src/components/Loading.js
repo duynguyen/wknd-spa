@@ -14,8 +14,9 @@ const {  REACT_APP_PUBLIC_URI } = process.env;
 class Loading extends Component {
 
     render() {
+        const loadingIconUrl = REACT_APP_PUBLIC_URI + loadingIcon;
         return (<div className="loading">
-              <img src={loadingIcon} alt="Loading..." />
+              <img src={loadingIconUrl} alt="Loading..." />
           </div>);
     }
 }
