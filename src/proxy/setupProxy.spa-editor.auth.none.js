@@ -37,7 +37,7 @@ module.exports = function(app) {
             return '/content/wknd-app/us/en/home.model.json';
         } else if (path.startsWith('/adventure:') && path.endsWith('.model.json')) {
             return '/content/wknd-app/us/en/home/adventure/' + path.split('/').pop();
-        }    
+        }
     }
 
     /**

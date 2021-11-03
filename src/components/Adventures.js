@@ -13,6 +13,7 @@ import Error from './Error';
 import Loading from './Loading';
 import './Adventures.scss';
 
+const { REACT_APP_HOST_URI } = require('../constants');
 
 function Adventures() {
     //Use React Hooks to set the initial GraphQL query to a variable named `query`
@@ -55,10 +56,11 @@ function AdventureItem(props) {
   if(!props || !props._path || !props.adventureTitle || !props.adventurePrimaryImage ) {
     return null;
   }
+  const imageUrl = REACT_APP_HOST_URI + props.adventurePrimaryImage._path;
   return (
         <li className="adventure-item">
           <Link to={`/adventure:${props._path}`}>
-            <img className="adventure-item-image" src={props.adventurePrimaryImage._path} 
+            <img className="adventure-item-image" src={imageUrl} 
                  alt={props.adventureTitle}/>
           </Link>
           <div className="adventure-item-length-price">
