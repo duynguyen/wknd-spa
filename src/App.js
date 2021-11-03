@@ -8,6 +8,7 @@ it.
 */
 import React from 'react';
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import { createBrowserHistory } from 'history';
 import logo from './images/wknd-logo-dk.svg';
 import Adventures from './components/Adventures';
 import AdventureDetail from './components/AdventureDetail';
@@ -24,8 +25,12 @@ function App() {
 
   const logoUrl = REACT_APP_PUBLIC_URI + logo;
 
+  const history = createBrowserHistory({
+    basename: REACT_APP_PUBLIC_URI
+  })
+
   return (
-    <Router>
+    <Router history={history}>
       <div className="App">
         <header>
           <img src={logoUrl} className="logo" alt="WKND Logo"/>
