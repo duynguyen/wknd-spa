@@ -9,14 +9,14 @@ it.
 import React, {Component} from 'react';
 import loadingIcon from '../images/icon-loading.svg';
 
-const {  REACT_APP_PUBLIC_URI } = process.env;
+// const {  REACT_APP_PUBLIC_URI } = process.env;
 
 class Loading extends Component {
 
     render() {
-        const loadingIconUrl = REACT_APP_PUBLIC_URI + loadingIcon;
+        // const loadingIconUrl = REACT_APP_PUBLIC_URI + loadingIcon;
         return (<div className="loading">
-              <img src={loadingIconUrl} alt="Loading..." />
+              <img src={loadingIcon} alt="Loading..." />
           </div>);
     }
 }

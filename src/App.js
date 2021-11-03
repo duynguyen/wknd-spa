@@ -19,11 +19,11 @@ import AEMImage from './components/aem/AEMImage';
 
 import './App.scss';
 
-const {  REACT_APP_PUBLIC_URI } = process.env;
+const {  REACT_APP_PUBLIC_URI } = require('./constants');
 
 function App() {
 
-  const logoUrl = REACT_APP_PUBLIC_URI + logo;
+  // const logoUrl = REACT_APP_PUBLIC_URI + logo;
 
   const history = createBrowserHistory({
     basename: REACT_APP_PUBLIC_URI
@@ -33,7 +33,7 @@ function App() {
     <Router history={history}>
       <div className="App">
         <header>
-          <img src={logoUrl} className="logo" alt="WKND Logo"/>
+          <img src={logo} className="logo" alt="WKND Logo"/>
           <hr />
         </header>
       <Switch>

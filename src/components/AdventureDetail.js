@@ -16,7 +16,7 @@ import AEMResponsiveGrid from '../components/aem/AEMResponsiveGrid';
 
 import './AdventureDetail.scss';
 
-const {  REACT_APP_PUBLIC_URI } = process.env;
+const { REACT_APP_HOST_URI, REACT_APP_PUBLIC_URI } = require('../constants');
 
 function AdventureDetail(props) {
 
@@ -43,7 +43,7 @@ function AdventureDetail(props) {
       return (
         <div className="adventure-detail">
           <Link className="adventure-detail-close-button" to={"/"}>
-            <img className="Backbutton-icon" src={REACT_APP_PUBLIC_URI + '/' +backIcon} alt="Return" />
+            <img className="Backbutton-icon" src={backIcon} alt="Return" />
           </Link>
           <Error errorMessage="Missing data, adventure could not be rendered." />
         </div>
@@ -53,7 +53,7 @@ function AdventureDetail(props) {
     return (
         <div className="adventure-detail">
           <Link className="adventure-detail-close-button" to={"/"}>
-            <img className="Backbutton-icon" src={REACT_APP_PUBLIC_URI + '/' + backIcon} alt="Return" />
+            <img className="Backbutton-icon" src={backIcon} alt="Return" />
           </Link>
           <h1 className="adventure-detail-title">{adventureData.adventureTitle}</h1>
           <div className="adventure-detail-info">
