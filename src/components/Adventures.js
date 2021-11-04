@@ -16,12 +16,12 @@ import './Adventures.scss';
 const { REACT_APP_HOST_URI } = require('../constants');
 
 function Adventures() {
-    //Use React Hooks to set the initial GraphQL query to a variable named `query`
+    // Use React Hooks to set the initial GraphQL query to a variable named `query`
     // If query is not defined, persistent query will be requested
     // Initially use cached / persistent query.
     const [query, setQuery] = useState('');
     const persistentQuery = 'wknd/adventures-all';
-    //Use a custom React Hook to execute the GraphQL query
+    // Use a custom React Hook to execute the GraphQL query
     const { data, errorMessage } = useGraphQL(query, persistentQuery);
 
     //If there is an error with the GraphQL query
@@ -52,7 +52,7 @@ function Adventures() {
 // Render individual Adventure item
 function AdventureItem(props) {
 
-  //Must have title, path, and image
+  // Must have title, path, and image
   if(!props || !props._path || !props.adventureTitle || !props.adventurePrimaryImage ) {
     return null;
   }
