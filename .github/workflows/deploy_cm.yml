@@ -8,12 +8,12 @@ env:
   # Cloud Manager's Git repository
   MAIN_REPOSITORY: git.cloudmanager.adobe.com/adobeio/AdobeIO-p22654-SPA/
   # The branch in Cloud Manager's Git repository to push to
-  MAIN_BRANCH : master
+  MAIN_BRANCH : main
  
 # Only run on a push to this branch
 on:
   push:
-     branches: [ master ]
+     branches: [ main ]
  
 jobs:
   build:
@@ -44,9 +44,8 @@ jobs:
         run:
           git clone -b ${MAIN_BRANCH} https://${USERNAME}:${PASSWORD}@${MAIN_REPOSITORY} main 
       # Move sub project
-      - name: Move project to main project
+      - name: Update git configs from main project
         run: |
-          rm -rf sub/.git/
           cp -rf main/.git sub/
       - name: Commit Changes
         run: |
